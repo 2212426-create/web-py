@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Music Web</title>
+    <title>Music App</title>
+    <style>
+
+    </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="logo">MusicNMD</div>
+    <div class="menu">
+        <a href="#"><p>🏠 Khám phá</p></a>
+        <a href="#"><p>🎵 Thư viện</p></a>
+        <a href="#"><p>📊 Top 100</p></a></div>
+    
+</div>
 
-<h1>🎵 Music Player</h1>
+<!-- Main -->
+<div class="main">
 
-<!-- Upload -->
-<form method="POST" enctype="multipart/form-data">
-    <input type="file" name="file" accept="audio/*">
-    <button type="submit">Upload</button>
-</form>
+    <!-- Topbar -->
+    <div class="topbar">
+        <input class="search" placeholder="Tìm bài hát...">
+        <div>👤 User</div>
+    </div>
 
-<hr>
+    <!-- Upload -->
+    <div class="upload">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="audio/*">
+            <button>Upload</button>
+        </form>
+    </div>
 
-<!-- List nhạc -->
-<ul>
+    <!-- Danh sách nhạc -->
+    <h3>Danh sách bài hát</h3>
+
     {% for song in songs %}
-    <li onclick="playSong('{{ url_for('static', filename='music/' + song) }}')">
-        {{ song }}
-    </li>
+    <div class="song" onclick="playSong('{{ url_for('static', filename='music/' + song) }}')">
+        <span>{{ song }}</span>
+        <span>▶</span>
+    </div>
     {% endfor %}
-</ul>
+
+</div>
 
 <!-- Player -->
-<audio id="player" controls style="width:100%"></audio>
+<div class="player">
+    <audio id="player" controls style="width:100%"></audio>
+</div>
 
 <script>
 function playSong(src) {
@@ -36,8 +61,6 @@ function playSong(src) {
     player.play();
 }
 </script>
-
-
 
 </body>
 </html>

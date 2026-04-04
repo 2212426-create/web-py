@@ -1,0 +1,96 @@
+ body {
+            margin: 0;
+            font-family: Arial;
+            background: #170f23;
+            color: white;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #231b2e;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #a970ff;
+        }
+
+        .menu {
+            margin-top: 30px;
+        }
+
+        .menu div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu div:hover {
+            background: #2f2739;
+            border-radius: 5px;
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Topbar */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .search {
+            width: 300px;
+            padding: 8px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        /* Upload */
+        .upload {
+            margin-bottom: 20px;
+        }
+
+        /* Song list */
+        .song {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+        }
+
+        .song:hover {
+            background: #2a1f3d;
+        }
+
+        /* Player */
+        .player {
+            position: fixed;
+            bottom: 0;
+            left: 220px;
+            right: 0;
+            background: #120c1c;
+            padding: 10px;
+        }
+        .menu a {
+    text-decoration: none !important;  /* bỏ gạch chân */
+    color: #dcdcdc;                   /* màu xám nhẹ */
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    background: #2f2739;
+    color: white;
+}
